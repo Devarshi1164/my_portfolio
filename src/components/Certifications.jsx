@@ -4,18 +4,18 @@ import { certifications } from '../data/portfolioData';
 
 const Certifications = () => {
   return (
-    <section id="certifications" className="section">
+    <section className="section page-section">
       <div className="container">
         <SectionTitle
-          eyebrow="Certifications & Learning"
-          title="Continuous learning and upskilling."
-          subtitle="Focused on AI, cloud, and security fundamentals."
+          eyebrow="Certifications"
+          title="Workshops and credentials."
+          subtitle="Selected learning milestones in AI and technology."
         />
 
         <div className="cert-grid">
           {certifications.map((item) => (
             <div key={item} className="cert-card reveal">
-              <span className="cert-badge">Learning</span>
+              <span className="cert-badge">Workshop</span>
               <h3>{item}</h3>
             </div>
           ))}

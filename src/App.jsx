@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -9,7 +9,26 @@ import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
+const pages = new Set(['home', 'profile', 'skills', 'projects', 'certifications', 'contact']);
+
+const getCurrentPage = () => {
+  const page = window.location.hash.slice(1);
+  return pages.has(page) ? page : 'home';
+};
+
 function App() {
+  const [currentPage, setCurrentPage] = React.useState(getCurrentPage);
+
+  useEffect(() => {
+    const updatePage = () => {
+      setCurrentPage(getCurrentPage());
+      window.scrollTo(0, 0);
+    };
+
+    window.addEventListener('hashchange', updatePage);
+    return () => window.removeEventListener('hashchange', updatePage);
+  }, []);
+
   useEffect(() => {
     const revealItems = document.querySelectorAll('.reveal')
 
@@ -28,21 +47,25 @@ function App() {
     revealItems.forEach((item) => observer.observe(item))
 
     return () => observer.disconnect()
-  }, [])
+  }, [currentPage])
 
   return (
     <div className="page-shell">
-      <Navbar />
+      <Navbar currentPage={currentPage} />
       <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-      <Certifications />
-      <Contact />
+        {currentPage === 'home' && <Hero />}
+        {currentPage === 'profile' && (
+          <>
+            <About />
+            <Experience />
+          </>
+        )}
+        {currentPage === 'skills' && <Skills />}
+        {currentPage === 'projects' && <Projects />}
+        {currentPage === 'certifications' && <Certifications />}
+        {currentPage === 'contact' && <Contact />}
       </main>
-      <Footer />
+      {currentPage !== 'home' && <Footer />}
     </div>
   )
 }

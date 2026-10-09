@@ -1,43 +1,26 @@
-import React, { useState } from 'react';
-import { ArrowRight, Menu, X } from 'lucide-react';
+import React from 'react';
 import { navItems } from '../data/portfolioData';
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const Navbar = ({ currentPage }) => (
+  <header className="site-header">
+    <nav className="nav container" aria-label="Main navigation">
+      <a href="#home" className="brand" aria-label="Gudapati Devarshi — home">
+        GD
+      </a>
 
-  return (
-    <header className="site-header">
-      <nav className="nav container">
-        <a href="#home" className="brand" aria-label="Go to home">
-          G. DEVARSHI
-        </a>
-
-        <div className={`nav-links ${isOpen ? 'open' : ''}`}>
-          {navItems.map((item) => (
-            <a key={item.label} href={item.href} onClick={() => setIsOpen(false)}>
-              {item.label}
-            </a>
-          ))}
-        </div>
-
-        <div className="nav-actions">
-          <a href="#contact" className="btn btn-secondary small">
-            Resume
-          </a>
-
-          <button
-            type="button"
-            className="mobile-menu-btn"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-            aria-expanded={isOpen}
+      <div className="nav-links">
+        {navItems.map((item) => (
+          <a
+            key={item.label}
+            href={item.href}
+            aria-current={currentPage === item.href.slice(1) ? 'page' : undefined}
           >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
-        </div>
-      </nav>
-    </header>
-  );
-};
+            {item.label}
+          </a>
+        ))}
+      </div>
+    </nav>
+  </header>
+);
 
 export default Navbar;

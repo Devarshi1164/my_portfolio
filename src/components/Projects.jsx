@@ -5,7 +5,7 @@ import { projects } from '../data/portfolioData';
 
 const Projects = () => {
   return (
-    <section id="projects" className="section">
+    <section className="section page-section">
       <div className="container">
         <SectionTitle
           eyebrow="Projects"

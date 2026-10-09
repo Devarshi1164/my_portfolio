@@ -1,16 +1,16 @@
 import React from 'react';
 import { Cpu, Lock, Sparkles } from 'lucide-react';
 import SectionTitle from './SectionTitle';
-import { aboutCards, learningTopics } from '../data/portfolioData';
+import { aboutCards, education } from '../data/portfolioData';
 
 const About = () => {
   return (
-    <section id="about" className="section">
+    <section className="section page-section">
       <div className="container">
         <SectionTitle
-          eyebrow="About"
+          eyebrow="Profile"
           title="Building practical AI with a security-first mindset."
-          subtitle="I focus on responsible, useful, and deployable AI systems."
+          subtitle="Gudapati Devarshi · Junior AI Engineer"
         />
 
         <div className="about-layout reveal">
@@ -30,6 +30,11 @@ const About = () => {
               My current focus is growing as an AI Engineer by working with Python, LLMs,
               RAG, LangChain, automation, APIs, and cloud technologies.
             </p>
+            <div className="profile-education">
+              <span>Education</span>
+              <strong>{education.degree}</strong>
+              <small>{education.field} · {education.specialization}</small>
+            </div>
           </div>
 
           <div className="about-highlights">
@@ -49,17 +54,6 @@ const About = () => {
                   <p>{item.text}</p>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="learning-box reveal">
-          <h3>Currently learning</h3>
-          <div className="learning-list">
-            {learningTopics.map((topic) => (
-              <span key={topic} className="chip">
-                {topic}
-              </span>
             ))}
           </div>
         </div>

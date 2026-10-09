@@ -4,7 +4,7 @@ import { skillGroups } from '../data/portfolioData';
 
 const Skills = () => {
   return (
-    <section id="skills" className="section">
+    <section className="section page-section">
       <div className="container">
         <SectionTitle
           eyebrow="Skills"

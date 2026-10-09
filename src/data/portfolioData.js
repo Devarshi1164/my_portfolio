@@ -56,18 +56,16 @@ const portfolioData = {
     },
   ],
   contact: {
-    email: "your.email@example.com",
-    phone: "+1234567890",
-    linkedin: "https://www.linkedin.com/in/yourprofile",
+    email: "devarshigudapati5634@gmail.com",
+    phone: "+971 0501749456",
   },
 };
 
 export const navItems = [
   { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
+  { label: 'Profile', href: '#profile' },
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
   { label: 'Certifications', href: '#certifications' },
   { label: 'Contact', href: '#contact' },
 ]
@@ -85,16 +83,6 @@ export const aboutCards = [
   { title: 'Automation', text: 'Workflow automation, API integrations, and productivity systems.' },
 ]
 
-export const learningTopics = [
-  'RAG',
-  'LangChain',
-  'LangGraph',
-  'LLM applications',
-  'Agentic AI',
-  'Vector databases',
-  'MCP',
-]
-
 export const skillGroups = [
   {
     title: 'Programming',
@@ -102,7 +90,19 @@ export const skillGroups = [
   },
   {
     title: 'AI / ML',
-    items: ['Generative AI', 'LLMs', 'LangChain', 'RAG', 'Prompt Engineering', 'Machine Learning fundamentals'],
+    items: [
+      'Generative AI',
+      'LLMs',
+      'LLM Applications',
+      'LangChain',
+      'LangGraph',
+      'RAG',
+      'Agentic AI',
+      'Vector Databases',
+      'MCP',
+      'Prompt Engineering',
+      'Machine Learning fundamentals',
+    ],
   },
   {
     title: 'AI Tools',
@@ -232,13 +232,9 @@ export const education = {
 
 export const certifications = [
   'IIT Patna Agentic AI Workshop',
-  'Python / Data Science learning',
-  'AWS Cloud / Security learning',
-  'Generative AI learning',
 ]
 
 export const contactInfo = {
-  email: 'your.email@example.com',
-  linkedin: 'https://www.linkedin.com/in/YOUR_USERNAME',
-  github: 'https://github.com/YOUR_USERNAME',
+  email: 'devarshigudapati5634@gmail.com',
+  phone: '+971 0501749456',
 }

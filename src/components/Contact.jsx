@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 import SectionTitle from './SectionTitle';
 import { contactInfo } from '../data/portfolioData';
 
@@ -12,40 +12,26 @@ const Contact = () => {
       icon: Mail,
     },
     {
-      label: 'LinkedIn',
-      value: 'YOUR_USERNAME',
-      href: contactInfo.linkedin,
-      icon: Linkedin,
-    },
-    {
-      label: 'GitHub',
-      value: 'YOUR_USERNAME',
-      href: contactInfo.github,
-      icon: Github,
+      label: 'Phone',
+      value: contactInfo.phone,
+      href: `tel:${contactInfo.phone.replace(/\s/g, '')}`,
+      icon: Phone,
     },
   ]
 
   return (
-    <section id="contact" className="section">
+    <section className="section page-section">
       <div className="container">
         <SectionTitle
           eyebrow="Contact"
           title="Let's Build Something Intelligent."
-          subtitle="I’m currently open to opportunities in AI Engineering, Generative AI, and related software engineering roles."
+          subtitle="I’m open to opportunities in AI Engineering, Generative AI, and related software engineering roles."
         />
 
         <div className="contact-shell reveal">
-          <div className="github-callout">
-            <p>Explore my code, experiments, and AI projects.</p>
-            <a href={contactInfo.github} target="_blank" rel="noreferrer" className="btn btn-primary">
-              GitHub
-              <ArrowRight size={18} />
-            </a>
-          </div>
-
           <div className="contact-grid">
             {contactLinks.map(({ label, value, href, icon: Icon }) => (
-              <a key={label} href={href} target="_blank" rel="noreferrer" className="contact-card">
+              <a key={label} href={href} className="contact-card">
                 <div className="contact-icon">
                   <Icon size={18} />
                 </div>
